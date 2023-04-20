@@ -59,6 +59,19 @@ public class QueryProcessor {
             return String.valueOf(first + second);
         }
 
+        else if (query.toLowerCase().contains("plus")) {
+
+            // extract numbers
+            String noQuestionMark = query.replace("?", "");
+            String[] parts = noQuestionMark.split(" ");
+
+            int first = Integer.parseInt(parts[2]);
+            int second = Integer.parseInt(parts[5);
+
+            // return type of function is string
+            return String.valueOf(first * second);
+        }
+
         return "";
     }
 }
