@@ -31,13 +31,13 @@ public class QueryProcessorTest {
   }
 
   @Test
-  public void knowsLargestNumber8or18or68() throws Exception {
-    assertThat(queryProcessor.process("Which of the following numbers is the largest: 8, 18, 68?"), containsString("68"));
+  public void knowsLargestNumberOfThree() throws Exception {
+    assertThat(queryProcessor.process("Which of the following numbers is the largest: 23, 77, 89?"), containsString("89"));
   }
 
   @Test
-  public void knowsLargestNumber23or77or89() throws Exception {
-    assertThat(queryProcessor.process("Which of the following numbers is the largest: 23, 77, 89?"), containsString("89"));
+  public void knowsTwoAddedNumbers() throws Exception {
+    assertThat(queryProcessor.process("What is 14 plus 81?"), containsString("95"));
   }
 
 }

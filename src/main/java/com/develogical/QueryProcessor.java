@@ -16,11 +16,15 @@ public class QueryProcessor {
 
         else if (query.toLowerCase().contains("sza")) {
             return "Solána Imani Rowe (born November 8, 1989), known professionally as SZA (/ˈsɪzə/ SIZ-ə), is an American singer and songwriter.";
-        } else if (query.toLowerCase().contains("what is your name?")) {
-            return "aymen-sophia";
-        } else if (query.toLowerCase().contains("which of the following numbers is the largest")) {
+        }
 
-            // "which of the offlowing are the largest: 6, 16, 4?
+        else if (query.toLowerCase().contains("what is your name?")) {
+            return "aymen-sophia";
+        }
+
+        else if (query.toLowerCase().contains("which of the following numbers is the largest")) {
+
+            // extract numbers
             String noQuestionMark = query.replace("?", "");
             String[] parts = noQuestionMark.split(": ");
             String[] numbers = parts[1].split(", ");
@@ -40,6 +44,19 @@ public class QueryProcessor {
             } else {
                 return String.valueOf(third);
             }
+        }
+
+        else if (query.toLowerCase().contains("plus")) {
+
+            // extract numbers
+            String noQuestionMark = query.replace("?", "");
+            String[] parts = noQuestionMark.split(" ");
+
+            int first = Integer.parseInt(parts[2]);
+            int second = Integer.parseInt(parts[4]);
+
+            // return type of function is string
+            return String.valueOf(first + second);
         }
 
         return "";
