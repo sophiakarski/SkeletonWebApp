@@ -29,4 +29,10 @@ public class QueryProcessorTest {
   public void knowsYourName() throws Exception {
     assertThat(queryProcessor.process("What is your name?"), containsString("aymen-sophia"));
   }
+
+  @Test
+  public void knowsLargestNumber8or18or68() throws Exception {
+    assertThat(queryProcessor.process("Which of the following numbers is the largest: 8, 18, 68?"), containsString("68"));
+  }
+
 }
