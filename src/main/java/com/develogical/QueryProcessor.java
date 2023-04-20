@@ -18,6 +18,10 @@ public class QueryProcessor {
       return "Solána Imani Rowe (born November 8, 1989), known professionally as SZA (/ˈsɪzə/ SIZ-ə), is an American singer and songwriter.";
     }
 
+    else if (query.toLowerCase().contains("what is your name?")) {
+      return "aymen-sophia";
+    }
+
     return "";
   }
 }
